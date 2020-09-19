@@ -9,6 +9,9 @@ float x[]={0.1,0.15,0.2,0.25,0.3};
 float y[5][5]={0};
 float val,p;
 
+int cont=1;
+do{
+
 int count=0; //Introduced count to decrease the redundent iterations
 
 y[0][0]=0.1003;y[1][0]=0.1511;y[2][0]=0.2027;y[3][0]=0.2553;y[4][0]=0.3039;
@@ -25,15 +28,11 @@ for(int col=1;col<4;col++){
 }
 
 float result=y[0][0]+(p)*y[0][1]+(p*(p-1)/2)*y[0][2]+(p*(p-1)*(p-2)/6)*y[0][3]+(p*(p-1)*(p-2)*(p-3)/24)*y[0][3];
-cout<<result;
-
-//If you want to see the fwd-diff matrix
-//for(int i=0;i<=4;i++){
-//	for(int j=0;j<=4;j++){
-//		cout<<y[i][j]<<" ";
-//	}
-//	cout<<"\n";
-//}
+cout<<"The interpolated value on "<<val<<" is "<<result<<endl;
+cout<<endl;0.12
+cout<<"To exit press 0, to continue enter 1"<<endl;
+cin>>cont;
+}while(cont==1);
 
 	return 0;
 }

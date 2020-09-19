@@ -48,7 +48,7 @@ for(i=n-1;i>0;i--)        // partial pivoting
             
         d[i]=(a[i][n]-c)/a[i][i];
     }
-  cout<<"The values of the variable are as follows "<<endl;
+  cout<<"The values of the index a,b,c are as follows "<<endl;
     for(i=0;i<n;i++)
     cout<<d[i]<<endl;	
 	
