@@ -6,6 +6,7 @@ long double fnval(double x){
 //	return exp(x)+1.5*x*x;
 //  return 0.5*((x*x)+1)*(x+1);
 //  return pow(x,3)-3*x;
+//  return 2*(x*x-4)*(x*x);
 //	return 0.1*pow(x,6)-0.29*pow(x,5)+2.31*pow(x,4)-8.33*pow(x,3)+12.89*pow(x,2)-6.8*x+1;
   return 0.65-(0.75/(1+(x*x)))-0.65*x*atan(1/x);
 //return x*(x-1.5);
@@ -13,7 +14,7 @@ long double fnval(double x){
 
 int main(){
 	long double a=0,b=0,mid=0,L=0,x1=0,x2=0,lim1;
-	int iter=1,max=6;
+	int iter=1,max=10;
 	cout<<"Input the initial, final value "<<endl;
 	cin>>a>>b;
 	double range=b-a;
@@ -39,7 +40,7 @@ int main(){
 	if(val1<val2){
 		b=x2;
 		x2=x1;
-		x1=b-x2;
+		x1=a+(b-x2);
 	}else{
 		a=x1;
 //		b=x2;
