@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+double fnval(double x){
+//	return ((x*x)/pow(5*pow(x,4)+3*pow(x,2),(0.33333)));
+return exp((-5*pow(x,3))/2);
+}
+
+int main(){
+	double a,b,step,sum1=0,sum2=0;
+	int n;
+	cout<<"Enter the initial,final points "<<endl;
+	cin>>a>>b;
+	cout<<"Enter number of subinterval "<<endl;
+	cin>>n;
+	step=(b-a)/n;
+	double val1=(fnval(a)+fnval(b));
+	for(int i=1;i<n;i++){
+		if(i%2==0){
+			double x=a+(step*i);
+		    sum1+=2*fnval(x);
+		}else{
+			double x=a+(step*i);
+			sum2+=4*fnval(x);
+		}
+	}
+	double val2=(sum1+sum2+val1)*(step/3);
+	cout<<val2;
+	return 0;
+}
